@@ -8,7 +8,7 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
-    <servlet-class>de.hdm.Webmessenger.server.GreetingServiceImpl</servlet-class>
+    <servlet-class>de.hdm.Webmessenger.server.WebmessengerVerwaltungImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
