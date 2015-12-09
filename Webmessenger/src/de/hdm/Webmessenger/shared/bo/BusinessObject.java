@@ -19,10 +19,12 @@ public abstract class BusinessObject implements Serializable {
 	 */
 	
 	private int id = 0;
-	private Date date = new Date();
+	private Date erstellungsZeitpunkt = new Date();
 	
 	
-	
+	/*
+	 * Getter und Setter Methoden
+	 */
 	public void setId(int i) {
 		this.id = i;
 	}
@@ -32,7 +34,7 @@ public abstract class BusinessObject implements Serializable {
 	}
 	
 	public long getDate() {
-		return this.date.getTime();
+		return this.erstellungsZeitpunkt.getTime();
 	}
 	
 	public boolean equals (Object o) {
