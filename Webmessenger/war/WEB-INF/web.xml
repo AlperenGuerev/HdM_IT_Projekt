@@ -7,14 +7,35 @@
 
   <!-- Servlets -->
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
+    <servlet-name>WebmessengerVerwaltungImpl</servlet-name>
     <servlet-class>de.hdm.Webmessenger.server.WebmessengerVerwaltungImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/webmessenger/greet</url-pattern>
+    <servlet-name>WebmessengerVerwaltungImpl</servlet-name>
+    <url-pattern>/webmessenger/WebmessengerVerwaltung</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name>LoginInfoServiceImpl</servlet-name>
+  	<servlet-class>de.hdm.Webmessenger.server.LoginServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>LoginServiceImpl</servlet-name>
+  	<url-pattern>/webmessenger/login</url-pattern></servlet-mapping>
+  	
+  	<security-constraint>
+	<web-resource-collection>
+	<web-resource-name>all</web-resource-name>
+	<url-pattern>/*</url-pattern>
+	</web-resource-collection>
+	<auth-constraint>
+	<role-name>*</role-name>
+	</auth-constraint>
+	</security-constraint>
+  	
   
   <!-- Default page to serve -->
   <welcome-file-list>
