@@ -8,6 +8,8 @@
 <module rename-to='webmessenger'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
+  <servlet class="de.hdm.Webmessenger.server.db.DBConnection"
+path="/MySQLConnection" />
 
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
