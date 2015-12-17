@@ -54,3 +54,124 @@ public class Webmessenger implements EntryPoint {
 		loginPanel.add(signInLink);
 		RootPanel.get().add(loginPanel);
 	}
+
+	
+	
+	
+	/*
+	 * Bei erfolgreichem Login wird die Applikation geladen.
+	 */
+	
+	
+	public void loadWebmessenger() {
+		
+		/*
+		 * Instanziierung des Webmessenger-Services. Geschieht über die Methode .getWebmessengerVerwaltung().
+		 */
+		 final WebmessengerVerwaltungAsync webmessengerAsync = ClientsideSetting.getWebmessengerVerwaltung(); 
+		 
+		 /*
+		  * Texteingabefelder für Registrierungsdaten. Wird später über Google Accounts Login gehandhabt.
+		  * Formular dient nur zu Testzwecken für die Datenbankanbindung.
+		  */
+		 final TextBox vorname = new TextBox();
+		 final TextBox nachname = new TextBox();
+		 final TextBox email = new TextBox();
+		 final PasswordTextBox password = new PasswordTextBox();
+		 
+		 final Button sendButton = new Button ("Senden"); 
+		 
+		 signOutLink.setHref(loginInfo.getLogoutUrl());
+
+		 VerticalPanel panel = new VerticalPanel();
+		 panel.add(vorname);
+		 panel.add(nachname);
+		 panel.add(email);
+		 panel.add(password);
+		 panel.add(sendButton);
+		 panel.add(signOutLink);
+		 RootPanel.get().add(panel);	
+		 
+		 /*
+		  *  In die Textbox Strings einfügen, so dass Endnutzer weiß,
+		  *  welche Daten in welches Textfeld gehören. Zusätzlich Clickhandler hinzufügen um 
+		  *  vordefinierten Text beim anklicken des Feldes zu löschen.
+		  */
+		 vorname.setText("Vorname");
+		 vorname.addClickHandler(new ClickHandler() {
+			 public void onClick(ClickEvent event) {
+				 vorname.setText("");
+			 }
+		 });
+		 
+		 nachname.setText("Nachname");
+		 vorname.addClickHandler(new ClickHandler() {
+			 public void onClick(ClickEvent event) {
+				 vorname.setText("");
+			 }
+		 });
+		 
+		 email.setText("Email");
+		 email.addClickHandler(new ClickHandler() {
+			 public void onClick(ClickEvent event) {
+				 email.setText("");
+			 }
+		 });
+		 
+		 
+		 password.setText("Passwort");
+		 password.addClickHandler(new ClickHandler() {
+			 public void onClick(ClickEvent event) {
+				 password.setText("");
+			 }
+		 });
+		 
+		 
+		 /*
+		  * Callback Objekt instanziieren.
+		  */
+		 
+		 final AsyncCallback<Nutzer> callback = new AsyncCallback<Nutzer>() {
+			 public void onSuccess(Nutzer result){
+				 Window.alert("Registrierung erfolgreich!");
+			 };
+			 public void onFailure(Throwable caught){
+				 caught.printStackTrace();
+				 Window.alert("Registrierung nicht erfolgreich :(");
+			 };
+		 };
+			 
+		 
+		 /*
+		  * Durch das Drücken des Senden-Buttons wird das entsprechende Query
+		  * zur Erstellung eines neuen Nutzers an die Datenbank gesendet und ausgeführt.
+		  * Es wird ein neues Nutzerobjekt zurückgesendet.
+		  */
+		 
+		 sendButton.addClickHandler(new ClickHandler(){
+			 public void onClick(ClickEvent event) {
+				 
+				 try {
+				 
+				 
+				 webmessengerAsync.nutzerErstellen(vorname.getText(), nachname.getText() , email.getText(), password.getText(), callback);
+				 
+				 } catch (Exception e) {
+					 Window.alert("Fehlgeschlagen");
+				 }
+				 
+			 }
+			 
+		 });
+		 
+		 
+		 
+		
+		
+		 
+		 
+		 
+		
+	}
+}
+	
