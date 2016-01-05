@@ -100,7 +100,7 @@ public class Webmessenger implements EntryPoint {
 		 });
 		 
 		 nachname.setText("Nachname");
-		 vorname.addClickHandler(new ClickHandler() {
+		 nachname.addClickHandler(new ClickHandler() {
 			 public void onClick(ClickEvent event) {
 				 vorname.setText("");
 			 }

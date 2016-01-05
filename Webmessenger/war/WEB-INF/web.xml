@@ -13,7 +13,7 @@
   
   <servlet-mapping>
     <servlet-name>WebmessengerVerwaltungImpl</servlet-name>
-    <url-pattern>/Webmessenger/WebmessengerVerwaltung</url-pattern>
+    <url-pattern>/webmessenger/WebmessengerVerwaltung</url-pattern>
   </servlet-mapping>
   
   
@@ -24,7 +24,7 @@
   
   <servlet-mapping>
   	<servlet-name>LoginServiceImpl</servlet-name>
-	<url-pattern>/Webmessenger/login</url-pattern>
+	<url-pattern>/webmessenger/login</url-pattern>
 	
 	</servlet-mapping>
   	
