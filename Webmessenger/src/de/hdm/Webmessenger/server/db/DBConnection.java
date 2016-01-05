@@ -1,8 +1,6 @@
 package de.hdm.Webmessenger.server.db;
 
 import java.sql.Connection;
-
-
 import java.sql.DriverManager;
 
 

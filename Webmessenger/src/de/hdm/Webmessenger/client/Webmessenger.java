@@ -3,8 +3,6 @@ package de.hdm.Webmessenger.client;
 import de.hdm.Webmessenger.shared.*;
 import de.hdm.Webmessenger.shared.bo.*;
 
-import de.hdm.Webmessenger.shared.bo.*;
-
 import com.google.gwt.core.client.*;
 import com.google.gwt.event.dom.client.*;
 import com.google.gwt.user.client.Window;
@@ -18,13 +16,11 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 public class Webmessenger implements EntryPoint {
 	
 	
-
 	private LoginInfo loginInfo = null;
 	private VerticalPanel loginPanel = new VerticalPanel();
 	private Label loginLabel = new Label("Bitte loggen Sie sich mit ihrem Google Account ein.");
 	private Anchor signInLink = new Anchor("Einloggen");
 	private Anchor signOutLink = new Anchor ("Ausloggen");
-
 	
 	/**
 	 * Einstiegspunkt beim Start des Webmessengers.
@@ -40,8 +36,6 @@ public class Webmessenger implements EntryPoint {
 				loginInfo = result;
 				if(loginInfo.isLoggedIn()) {
 					loadWebmessenger();
-
-
 				} else{
 					loadLogin();
 				}
@@ -97,7 +91,6 @@ public class Webmessenger implements EntryPoint {
 		  *  In die Textbox Strings einfügen, so dass Endnutzer weiss
 		  *  welche Daten in welches Textfeld gehören. Zusätzlich Clickhandler hinzufügen um 
 		  *  vordefinierten Text zu löschen.
-
 		  */
 		 vorname.setText("Vorname");
 		 vorname.addClickHandler(new ClickHandler() {
@@ -176,4 +169,3 @@ public class Webmessenger implements EntryPoint {
 		
 	}
 }
-	

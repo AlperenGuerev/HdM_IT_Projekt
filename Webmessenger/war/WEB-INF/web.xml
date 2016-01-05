@@ -13,12 +13,12 @@
   
   <servlet-mapping>
     <servlet-name>WebmessengerVerwaltungImpl</servlet-name>
-    <url-pattern>/webmessenger/WebmessengerVerwaltung</url-pattern>
+    <url-pattern>/Webmessenger/WebmessengerVerwaltung</url-pattern>
   </servlet-mapping>
   
   
   <servlet>
-  	<servlet-name>LoginInfoServiceImpl</servlet-name>
+  	<servlet-name>LoginServiceImpl</servlet-name>
   	<servlet-class>de.hdm.Webmessenger.server.LoginServiceImpl</servlet-class>
   </servlet>
   

@@ -37,4 +37,7 @@ public class Nutzer extends BusinessObject {
 		this.password = password;
 	}
 	
+	
+
+
 }
