@@ -24,7 +24,7 @@
   
   <servlet-mapping>
   	<servlet-name>LoginServiceImpl</servlet-name>
-	<url-pattern>/webmessenger/login</url-pattern>
+	<url-pattern>/Webmessenger/login</url-pattern>
 	
 	</servlet-mapping>
   	
