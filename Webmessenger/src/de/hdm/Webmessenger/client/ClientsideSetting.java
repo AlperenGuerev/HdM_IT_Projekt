@@ -2,9 +2,9 @@ package de.hdm.Webmessenger.client;
 
 import java.util.logging.Logger;
 
+
 import de.hdm.Webmessenger.shared.*;
 import com.google.gwt.core.client.*;
-
 
 public class ClientsideSetting extends CommonSettings {
 

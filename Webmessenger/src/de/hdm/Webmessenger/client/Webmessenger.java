@@ -1,6 +1,7 @@
 package de.hdm.Webmessenger.client;
 
 import de.hdm.Webmessenger.shared.*;
+import de.hdm.Webmessenger.shared.bo.*;
 
 import de.hdm.Webmessenger.shared.bo.*;
 
@@ -10,19 +11,20 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
+
 /**
  * Hauptklasse implementiert EntryPoint Interface.
  */
 public class Webmessenger implements EntryPoint {
 	
 	
-	
+
 	private LoginInfo loginInfo = null;
 	private VerticalPanel loginPanel = new VerticalPanel();
 	private Label loginLabel = new Label("Bitte loggen Sie sich mit ihrem Google Account ein.");
 	private Anchor signInLink = new Anchor("Einloggen");
 	private Anchor signOutLink = new Anchor ("Ausloggen");
-	
+
 	
 	/**
 	 * Einstiegspunkt beim Start des Webmessengers.
@@ -38,7 +40,9 @@ public class Webmessenger implements EntryPoint {
 				loginInfo = result;
 				if(loginInfo.isLoggedIn()) {
 					loadWebmessenger();
-				} else {
+
+
+				} else{
 					loadLogin();
 				}
 			}
@@ -54,9 +58,7 @@ public class Webmessenger implements EntryPoint {
 		loginPanel.add(signInLink);
 		RootPanel.get().add(loginPanel);
 	}
-
-	
-	
+		
 	
 	/*
 	 * Bei erfolgreichem Login wird die Applikation geladen.
@@ -71,8 +73,7 @@ public class Webmessenger implements EntryPoint {
 		 final WebmessengerVerwaltungAsync webmessengerAsync = ClientsideSetting.getWebmessengerVerwaltung(); 
 		 
 		 /*
-		  * Texteingabefelder für Registrierungsdaten. Wird später über Google Accounts Login gehandhabt.
-		  * Formular dient nur zu Testzwecken für die Datenbankanbindung.
+		  * Texteingabefelder für Registrierungsdaten.
 		  */
 		 final TextBox vorname = new TextBox();
 		 final TextBox nachname = new TextBox();
@@ -93,9 +94,10 @@ public class Webmessenger implements EntryPoint {
 		 RootPanel.get().add(panel);	
 		 
 		 /*
-		  *  In die Textbox Strings einfügen, so dass Endnutzer weiß,
+		  *  In die Textbox Strings einfügen, so dass Endnutzer weiss
 		  *  welche Daten in welches Textfeld gehören. Zusätzlich Clickhandler hinzufügen um 
-		  *  vordefinierten Text beim anklicken des Feldes zu löschen.
+		  *  vordefinierten Text zu löschen.
+
 		  */
 		 vorname.setText("Vorname");
 		 vorname.addClickHandler(new ClickHandler() {

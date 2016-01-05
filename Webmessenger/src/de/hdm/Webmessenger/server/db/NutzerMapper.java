@@ -1,15 +1,17 @@
 package de.hdm.Webmessenger.server.db;
 
 import java.sql.*;
-
+import de.hdm.Webmessenger.shared.bo.*;
 import java.util.Vector;
-
 import de.hdm.Webmessenger.shared.bo.Nutzer;
+
+
 
 
 public class NutzerMapper {
 	
-private static NutzerMapper n = null;
+
+	private static NutzerMapper n = null;
 	
 	
 	protected NutzerMapper() {};
@@ -44,8 +46,7 @@ private static NutzerMapper n = null;
 		}
 		return a;
 	}
-	
-	
+
 	
 }
 	

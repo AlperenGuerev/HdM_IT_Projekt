@@ -6,16 +6,18 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import de.hdm.Webmessenger.server.db.*;
 import com.google.gwt.user.client.Window;
 
+
 /**
  * Serverseitige Implementierung des Verwaltungsinterfaces.
- */
+*/
 @SuppressWarnings("serial")
 public class WebmessengerVerwaltungImpl extends RemoteServiceServlet implements
 		WebmessengerVerwaltung {
+	
+	
+	
+	private NutzerMapper nutzerMapper = null;
 
-	
-private NutzerMapper nutzerMapper = null;
-	
 	
 	public WebmessengerVerwaltungImpl() throws IllegalArgumentException{};
 	
@@ -39,9 +41,14 @@ private NutzerMapper nutzerMapper = null;
 		
 		return this.nutzerMapper.insert(a);
 		
-		
+	
 		
 	}
 	
-	}
+}
+
+
+
+
+
 
