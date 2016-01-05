@@ -36,7 +36,7 @@ public class Webmessenger implements EntryPoint {
 				loginInfo = result;
 				if(loginInfo.isLoggedIn()) {
 					loadWebmessenger();
-				} else {
+				} else{
 					loadLogin();
 				}
 			}
